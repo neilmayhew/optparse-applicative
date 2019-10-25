@@ -119,7 +119,7 @@ fullDesc pprefs = tabulate . catMaybes . mapParser doc
     doc info opt = do
       guard . not . isEmpty $ n
       guard . not . isEmpty $ h
-      return (extractChunk n, align . extractChunk $ h <<+>> hdef)
+      return (extractChunk n, align . extractChunk $ h <</>> hdef)
       where
         n = optDesc pprefs style info opt
         h = optHelp opt
